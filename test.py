@@ -3,7 +3,7 @@ import datetime
 #from babel.dates import format_date
 import pandas as pd
 #import matplotlib.pyplot as plt
-#import csv
+import csv
 
 st.markdown("# Symulator wynagrodzenia strażaka PSP")
 st.markdown("Aplikacja symulująca wyliczenie uposażenia strażaka, funkcjonariusza Państwowej Straży Pożarnej to narzędzie, które umożliwia użytkownikowi łatwe i szybkie obliczenie wynagrodzenia na podstawie określonych kryteriów, takich jak staż pracy, stopień awansu, rodzaj wykonywanej pracy oraz dodatki i premie. Aplikacja ta może być przydatna dla strażaków oraz ich przełożonych, którzy chcą poznać orientacyjną wysokość wynagrodzenia, jakie może otrzymać pracownik. Dzięki temu narzędziu można w prosty sposób przewidywać wysokość pensji oraz skutki zmiany poszczególnych parametrów, takich jak dodatkowe uprawnienia czy wynagrodzenie za nadgodziny.")
@@ -194,4 +194,5 @@ dane = {
     "2023": GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS
 }
 
-
+# Wyświetlanie wykresu słupkowego
+st.bar_chart(dane, width=300, height=400, use_container_width=False,)
