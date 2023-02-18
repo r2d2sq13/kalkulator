@@ -173,7 +173,7 @@ st.write("-------------------")
 st.markdown("### 2. Symulacja wynagrodzenia")
 st.markdown("2.1. Wynagrodzenie przeliczone na zasadach obowiązujących do 28 lutego 2023 roku:")
 st.markdown(f"Twoje uposażenie składa się grupy uposazenia zasadniczego: tj: tzw. grupy: :red[{selected_group}] której odpowiada kwota :red[{GUZ22:.2f} zł]. Kolejym składnikiem jest tzw. wzrost uposażenia zasadniczego z tytułu wysługi lat w %. W twoim przypadku liczba przepracowanych lat to :red[{WL}] odpowiadający współczynnik to :red[{procent_lat_wysluga*100} %]. <br>Kolejnym elementem jest posiadany stopień. W twoim wypadku to :red[{selected_group2}] dla którego dodatek równa się :red[{DS:.2f} zł]. <brr> Twój dodatek słuzbowy lub funkcyjny jest w wysokości :red[{PDS:.2f} zł]. Doliczony równiez jest dodatek motywacyjny w wysokości :red[{DM:.2f} zł] oraz dodatek 25+ w wysokości :red[{DDZIADKOWY:.2f} zł].", unsafe_allow_html=True)
-st.markdown(f"<b>Twoje wynagrodzenie wynosi: :red[{uposazenie22:.2f} zł brutto].</b>", unsafe_allow_html=True)
+st.markdown(f"Twoje wynagrodzenie wynosi: {uposazenie22:.2f} zł brutto")
 
 #-----------
 
@@ -195,7 +195,7 @@ df = pd.DataFrame(dane, columns=["Nazwa składnika", "2022", "2023", "Różnica"
 
 # Wyświetlenie ramki danych w aplikacji Streamlit
 st.table(df)
-
+st.metric("Twoje wynagrodzenie po 1 marca 2023 wynosi:", f"{GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł brutto")
 # Przygotowanie danych
 dane = {
     "2022": GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22,
@@ -204,6 +204,8 @@ dane = {
 
 # Wyświetlanie wykresu słupkowego
 st.bar_chart(dane, width=300, height=400, use_container_width=False,)
+
+
 
 #------------------
 a1 = today
@@ -240,3 +242,4 @@ def save_to_csv(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1):
 if st.button("Zapisz swoją kalkulację do analizy"):
     save_to_csv(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1)
     st.write("Zapisano dane do pliku dane.csv.")
+    
