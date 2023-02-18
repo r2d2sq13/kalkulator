@@ -1,10 +1,15 @@
 import streamlit as st
 import datetime
-
 #from babel.dates import format_date
 import pandas as pd
 #import matplotlib.pyplot as plt
 import csv
+
+st.set_page_config(
+    page_title="Kalkulator wynagrodzenia strażaka PSP", # Nazwa strony
+    page_icon="🚒", #https://emojipedia.org/fire-engine/
+)
+st.sidebar.success("Wybierz stronę ponieżej:")
 
 st.markdown("# Symulator wynagrodzenia strażaka PSP")
 st.markdown("Aplikacja symulująca wyliczenie uposażenia strażaka, funkcjonariusza Państwowej Straży Pożarnej to narzędzie, które umożliwia użytkownikowi łatwe i szybkie obliczenie wynagrodzenia na podstawie określonych kryteriów, takich jak staż pracy, stopień awansu, rodzaj wykonywanej pracy oraz dodatki i premie. Aplikacja ta może być przydatna dla strażaków oraz ich przełożonych, którzy chcą poznać orientacyjną wysokość wynagrodzenia, jakie może otrzymać pracownik. Dzięki temu narzędziu można w prosty sposób przewidywać wysokość pensji oraz skutki zmiany poszczególnych parametrów, takich jak dodatkowe uprawnienia czy wynagrodzenie za nadgodziny.")
@@ -199,3 +204,39 @@ dane = {
 
 # Wyświetlanie wykresu słupkowego
 st.bar_chart(dane, width=300, height=400, use_container_width=False,)
+
+#------------------
+a1 = today
+b1 = f"{GUZ23:.2f} zł"
+c1 = f"{WUZLAT23:.2f} zł"
+d1 = f"{DS:.2f} zł" 
+e1 = f"{PDS+b+c:.2f} zł"
+f1 = f"{DM:.2f} zł"
+g1 = f"{plus15:.2f} zł"
+h1 = f"{DDZIADKOWY:.2f} zł"
+i1 = f"{KDS:.2f} zł"
+j1 = f"{GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł"
+
+
+def save_to_csv(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1):
+    with open('dane.csv', 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([a1, b1, c1, d1, e1, f1, g1, h1, i1, j1])
+
+
+
+#st.write("Wartości zmiennych:")
+#st.write(f"a = {a1}")
+#st.write(f"b = {b1}")
+#st.write(f"c = {c1}")
+#st.write(f"d = {d1}")
+#st.write(f"e = {e1}")
+#st.write(f"f = {f1}")
+#st.write(f"g = {g1}")
+#st.write(f"h = {h1}")
+#st.write(f"i = {i1}")
+#st.write(f"j = {j1}")
+
+if st.button("Zapisz swoją kalkulację do analizy"):
+    save_to_csv(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1)
+    st.write("Zapisano dane do pliku dane.csv.")
