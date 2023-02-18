@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime
+
 #from babel.dates import format_date
 import pandas as pd
 #import matplotlib.pyplot as plt
@@ -49,6 +50,8 @@ else:
 
 #----------------
 #wybor dodatku stołecznego
+KwotaBazowa22 = 1614.69    #kwota bazowa 2022
+KwotaBazowa23 = 1740.64     #kwota bazowa 2023
 czy_dodatek_stoleczny = st.radio("Czy posiadasz prawo do dodatku stołecznego?", options=["TAK", "NIE"],index=1, help='Wpisz czy posiadasz prawo do dodatku stołecznego. Dodatek stołeczny przyznaje się strażakowi w wysokości 31,5% stawki podstawowej, jeżeli strażak zamieszkuje w granicach miasta stołecznego.')
 if czy_dodatek_stoleczny == "TAK":
     dodatek_stoleczny_procent = 0.315 # 31,5%
@@ -101,7 +104,7 @@ procent_lat_wysluga = wysluga_tablica["lata_procent"][liczba_lat_w_sluzbie_cyfra
 procent_lat15_wysluga = dodatek_15_lat_tablica["dodatek_procent15"][liczba_lat_w_sluzbie_cyfra]
 
 #Inne zmienne, pomocnicze
-dodatek_stoleczny = grupa_uposazenia_zasadniczego_2022 * dodatek_stoleczny_procent
+dodatek_stoleczny = KwotaBazowa23 * dodatek_stoleczny_procent
 
 #Dodatek dziadkowy
 if liczba_lat_w_sluzbie_cyfra <= 25:
