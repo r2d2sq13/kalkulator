@@ -137,7 +137,7 @@ DSL = dodatek_sluzbowy #Posiadany dodatek służbowy
 DFU = dodatek_funkcyjny #Posiadany dodatek funkcyjny
 PDS = dodatek_sluzbowy+dodatek_funkcyjny #Dodatek słubowy razem
 DM = wartosc_dodatku_motywacyjnego #dodatek motywacyjny
-plus15 = round((GUZ22+WUZLAT22)*procent_lat15_wysluga, 2) #dodatek za 15 lat w służbie w kwocie
+plus15 = round((GUZ23+WUZLAT23)*procent_lat15_wysluga, 2) #dodatek za 15 lat w służbie w kwocie
 
 #Podwyższenie dodatku służbowego do 8% + od planowanego na 2024 wzrostu w grupie / #Podwyższenie dodatku służbowego do 8% (od 1.03. do 31.12.2023r)
 #J10/(J4+J6+J8)
