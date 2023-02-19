@@ -199,7 +199,7 @@ st.metric("Twoje wynagrodzenie po 1 marca 2023 wynosi:", f"{GUZ23+DS+PDS+DM+DDZI
 # Przygotowanie danych
 dane = {
     "2022": GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22,
-    "2023": GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS
+    "2023": GUZ23+DS+(PDS+b+c)+DM+DDZIADKOWY+plus15+WUZLAT23+KDS
 }
 
 # Wyświetlanie wykresu słupkowego
@@ -217,7 +217,7 @@ f1 = f"{DM:.2f} zł"
 g1 = f"{plus15:.2f} zł"
 h1 = f"{DDZIADKOWY:.2f} zł"
 i1 = f"{KDS:.2f} zł"
-j1 = f"{GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł"
+j1 = f"{GUZ23+DS+(PDS+b+c)+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł"
 
 
 def save_to_csv(a1, b1, c1, d1, e1, f1, g1, h1, i1, j1):
