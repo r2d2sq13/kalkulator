@@ -135,7 +135,7 @@ ROZNICA24_23 = GUZ24 - GUZ23 #Różnica między kwotą uposażenia zasadniczego 
 DS = stopien_wartosc #Dodatek za stopień
 DSL = dodatek_sluzbowy #Posiadany dodatek służbowy
 DFU = dodatek_funkcyjny #Posiadany dodatek funkcyjny
-PDS = dodatek_sluzbowy+dodatek_funkcyjny #Dodatek słubowy razem
+PDS = DSL+DFU #Dodatek słubowy razem
 DM = wartosc_dodatku_motywacyjnego #dodatek motywacyjny
 plus15 = round((GUZ23+WUZLAT23)*procent_lat15_wysluga, 2) #dodatek za 15 lat w służbie w kwocie
 
