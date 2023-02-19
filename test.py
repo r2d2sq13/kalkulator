@@ -187,7 +187,7 @@ dane = [
     ['Dodatek 15+:'                 , f" --- "                                          , f"{plus15:.2f} zł"                                , f"{plus15:.2f} zł"],
     ['Dodatek 25+:'                 , f" {DDZIADKOWY:.2f} "                             , f"{DDZIADKOWY:.2f} zł"                            , f"{DDZIADKOWY-DDZIADKOWY:.2f} zł"],
     ['Dodatek stołeczny'            , f" --- "                                          , f"{KDS:.2f} zł"                                   , f"{KDS:.2f} zł"],
-    ['Razem brutto w zł:'           , f"{GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22:.2f} zł"   , f"{GUZ23+DS+(PDS+b+c)+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł"   , f"{(GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS)-(GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22):.2f} zł"],
+    ['Razem brutto w zł:'           , f"{GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22:.2f} zł"   , f"{GUZ23+DS+(PDS+b+c)+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł"   , f"{(GUZ23+DS+(PDS+b+c)+DM+DDZIADKOWY+plus15+WUZLAT23+KDS)-(GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22):.2f} zł"],
 ]   
 
 
