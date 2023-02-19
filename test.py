@@ -195,7 +195,7 @@ df = pd.DataFrame(dane, columns=["Nazwa składnika", "2022", "2023", "Różnica"
 
 # Wyświetlenie ramki danych w aplikacji Streamlit
 st.table(df)
-st.metric("Twoje wynagrodzenie po 1 marca 2023 wynosi:", f"{GUZ23+DS+PDS+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł brutto")
+st.metric("Twoje wynagrodzenie po 1 marca 2023 wynosi:", f"{GUZ23+DS+(PDS+b+c)+DM+DDZIADKOWY+plus15+WUZLAT23+KDS:.2f} zł brutto")
 # Przygotowanie danych
 dane = {
     "2022": GUZ22+DS+PDS+DM+DDZIADKOWY+WUZLAT22,
